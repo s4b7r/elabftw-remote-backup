@@ -13,4 +13,4 @@ This is a controller and target for remote eLabFTW backups. It instructs the eLa
 7. Add `backup-elab-cslab.sh` to crontab - use `crontab -e` or put into `/etc/crontab`
 8. Currently VPN connection is hardcoded for connection to eLabFTW host.
   1. You need to get those scripts or remove them.
-  2. This script expects VPN scripts in `$HOME/scripts/vpn`
+  2. This script expects VPN scripts in `$HOME/scripts/vpn`, e.g. see [Cisco VPN scripts](https://github.com/s4b7r/cisco-vpn-scripts)
