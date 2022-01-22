@@ -7,5 +7,5 @@ SCRIPT_PATH=$(dirname "$(realpath "$0")")
 . "$SCRIPT_PATH/1-create-localdir.sh"
 . "$SCRIPT_PATH/2-backup-from-cselab.sh"
 . "$SCRIPT_PATH/3-7zip-backup.sh"
-. "$SCRIPT_PATH/4-backup-to-truenas.sh"
+. "$SCRIPT_PATH/4-backup-to-target.sh"
 
