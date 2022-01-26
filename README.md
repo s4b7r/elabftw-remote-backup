@@ -5,12 +5,12 @@ This is a controller and target for remote eLabFTW backups. It instructs the eLa
 ## Setup
 
 1. Configure `elabctl backup` for `/var/backups/elabftw`
-2. `chmod u+x backup-elab-cslab.sh`
+2. `chmod u+x backup-elab.sh`
 3. Run `requirements.sh`
 4. Create `ftp.secret` from `ftp.secret.sample`
-5. Fill variables correctly in `2-backup-from-cselab.sh` and `4-backup-to-truenas.sh`
+5. Fill variables correctly in `2-backup-from-elab.sh` and `4-backup-to-truenas.sh`
 6. The user on the eLab host must have rights to sudo for elabctl without password
-7. Add `backup-elab-cslab.sh` to crontab - use `crontab -e` or put into `/etc/crontab`
+7. Add `backup-elab.sh` to crontab - use `crontab -e` or put into `/etc/crontab`
 8. Currently VPN connection is hardcoded for connection to eLabFTW host.
   1. You need to get those scripts or remove them.
   2. This script expects VPN scripts in `$HOME/scripts/vpn`, e.g. see [Cisco VPN scripts](https://github.com/s4b7r/cisco-vpn-scripts)
