@@ -21,8 +21,11 @@ This is a controller and target for remote eLabFTW backups. It instructs the eLa
 7.  Create `ftp.secret` from `ftp.secret.sample`
 8.  Fill all necessary variables in the script files.
     - **I am sorry, this must be made easier in the future.**
-9.  The user ($SSHUSER) on the eLabFTW host ($SSHHOST) must have rights to sudo for elabctl without password
-10. Add `elab-backup_do_*.sh` scripts to crontab: use `crontab -e` or put into `/etc/crontab`
+9.  The user (`$SSHUSER`) on the eLabFTW host (`$SSHHOST`) must have rights to sudo for elabctl without password
+10. Add `elab-backup_do_*.sh` scripts to crontab: use `crontab -e` or put into `/etc/crontab`, e.g.:
+    -  `0  19 *   * *   <SCRIPT PATH>/elab-backup_do_daily.sh`
+    -  `45 12 1-7 * *   [ $(date +\%u) -eq 5 ] && <SCRIPT PATH>/elab-backup_do_monthly.sh` (Does it on the first Friday in every month on my system. Please check for yours.)
+    -  `0  13 *   * FRI <SCRIPT_PATH>/elab-backup_do_weekly.sh`
 11. Currently VPN connection is hardcoded for connection to eLabFTW host.
-  1. You need to get those scripts or remove them.
-  2. This script expects VPN scripts in `$HOME/scripts/vpn`, e.g. see [Cisco VPN scripts](https://github.com/s4b7r/cisco-vpn-scripts)
+    - You need to get those scripts or remove them.
+    - This script expects VPN scripts in `$HOME/scripts/vpn`, e.g. see [Cisco VPN scripts](https://github.com/s4b7r/cisco-vpn-scripts)
