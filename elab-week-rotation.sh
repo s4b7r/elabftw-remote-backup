@@ -10,8 +10,8 @@ export SSHPASS="ELAB HOST SSH PASS"
 USER="ELAB HOST SSH USER"
 HOST="ELAB HOST"
 sshpass -e ssh $USER@$HOST "uname -a"
-sshpass -e ssh $USER@$HOST "sudo elabctl backup"
-sshpass -e rsync -r $USER@$HOST:/var/backups/elabftw $SCRIPT_PATH/elabbackup
+sshpass -e ssh $USER@$HOST "rm -rf /var/backups/elabftw/_archive/daily_last_week/*"
+sshpass -e ssh $USER@$HOST "mv /var/backups/elabftw/_archive/daily_this_week/* /var/backups/elabftw/_archive/daily_last_week/"
 
 "$HOME/scripts/vpn/vpndisconnect.sh"
 
